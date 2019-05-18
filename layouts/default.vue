@@ -1,53 +1,53 @@
 <template>
-  <div>
+  <div id="layout">
+    <div class="splash" v-bind:class="{ 'inactive': !showSplash }" @dblclick="showSplash = false">
+      <div style="width: 100%; height: 50px;">
+        <div style="display: inline-block; color: #fff; font-size: 42px;">Hunni.Devteam</div>
+      </div>
+    </div>
+    <app-navigation></app-navigation>
     <nuxt/>
   </div>
 </template>
 
-<style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+<script type="text/javascript">
+import AppNavigation from '@/components/AppNavigation'
+
+export default {
+  components: { AppNavigation },
+  data () {
+    return {
+      showSplash: false
+    }
+  },
+  mounted () {
+  }
+}
+</script>
+
+<style lang="scss">
+@import 'normalize.css';
+
+* {
+  letter-spacing: -0.12px;
+}
+
+ul, ol { list-style: none; margin: 0; padding: 0; }
+
+div, header, nav, main, section, article, footer, aside {
+  position: relative;
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
+#layout {
+  display: flex;
+  min-height: 100vh;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.splash {
+  position: fixed; left: 0; top: 0; z-index: 10; width: 100%; height: 100%; background-color: #2c2c2c; display: flex; justify-content: center; align-items: center;
+  &.inactive {
+    display: none;
+  }
 }
 </style>
-

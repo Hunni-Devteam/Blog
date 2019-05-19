@@ -44,10 +44,22 @@ div, header, nav, main, section, article, footer, aside {
   min-height: 100vh;
 }
 
+#disqus_thread {
+  padding: 32px;
+}
+
 .splash {
   position: fixed; left: 0; top: 0; z-index: 10; width: 100%; height: 100%; background-color: #2c2c2c; display: flex; justify-content: center; align-items: center;
   &.inactive {
     display: none;
   }
+}
+
+.page-content-wrapper {
+  flex: 1; background-color: #e9e9e9;
+}
+
+.bg-white {
+  background-color: #fff;
 }
 </style>

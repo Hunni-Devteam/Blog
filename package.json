@@ -18,6 +18,7 @@
     "@fortawesome/pro-regular-svg-icons": "^5.8.2",
     "@fortawesome/pro-solid-svg-icons": "^5.8.2",
     "@fortawesome/vue-fontawesome": "^0.1.6",
+    "@toast-ui/vue-editor": "^1.1.1",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.0.0"
   },

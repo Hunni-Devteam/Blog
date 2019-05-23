@@ -62,4 +62,14 @@ div, header, nav, main, section, article, footer, aside {
 .bg-white {
   background-color: #fff;
 }
+.article-viewer {
+  margin: 24px;
+  .tui-editor-contents {
+    color: #333;
+    p {
+      color: #333;
+      font-size: 15px;
+    }
+  }
+}
 </style>

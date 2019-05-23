@@ -36,7 +36,8 @@ module.exports = {
     }
   },
   plugins: [
-    { src: '~plugins/fontAwesome', ssr: true }
+    { src: '~plugins/fontAwesome', ssr: true },
+    { src: '~plugins/components', ssr: true }
   ]
 }
 

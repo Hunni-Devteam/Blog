@@ -2,15 +2,18 @@
   <div class="page-content-wrapper">
     <div class="bg-white" style="margin: 24px;">
       <h1>Recent Posts</h1>
-      <div @click="$router.push(pageShortcut.src)" v-for="pageShortcut in $store.getters.pageShortcuts" :key="pageShortcut.created_at" style="cursor: pointer; display: flex; font-size: 16px;">
-        <div>
-          <b style="font-size: 20px">{{ pageShortcut.title }}</b><br>
-          {{ pageShortcut.description }}
+      <div @click="$router.push(pageShortcut.src)" v-for="pageShortcut in $store.getters.pageShortcuts" :key="pageShortcut.created_at" style="cursor: pointer; font-size: 16px;">
+        <div style="display: flex;">          
+          <div>
+            <b style="font-size: 20px">{{ pageShortcut.title }}</b><br>
+            {{ pageShortcut.description }}
+          </div>
+          <div style="flex: 1"></div>
+          <div>
+            {{ pageShortcut.created_at }}
+          </div>
         </div>
-        <div style="flex: 1"></div>
-        <div>
-          {{ pageShortcut.created_at }}
-        </div>
+        <span style="padding: 3px 6px; margin: 2px; background-color: #6c6c6c; color: #fff; font-size: 13px; border-radius: 3px;" v-for="tag in pageShortcut.tags" :key="tag">{{ tag }}</span>
       </div>
     </div>
   </div>

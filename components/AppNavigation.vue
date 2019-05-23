@@ -15,10 +15,10 @@
         <ul style="line-height: 28px; font-size: 14px; color: #b9b9b9;">
           <li>- Web Frontend</li>
           <li>- Web Backend</li>
-          <li>- Language Spec</li>
-          <li>- Algorithm</li>
           <li>- API Document</li>
+          <li>- Algorithm</li>
           <li>- Development Tip</li>
+          <li>- Language Spec</li>
           <li>- Issues</li>
           <li>- DevOps</li>
         </ul>

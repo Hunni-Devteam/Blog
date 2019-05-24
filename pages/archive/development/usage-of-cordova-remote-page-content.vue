@@ -2,7 +2,7 @@
   <div>
     <!-- breadcrumb -->
     <div style="height: 48px; line-height: 48px; background-color: #fff; margin: 0px 0px 24px 0px; padding: 0px 24px;">
-      home / archive / development / laravel-query-builder-causes-mssql-perfomance-issue
+      home / archive / development / usage-of-cordova-remote-page-content
     </div>
     <div class="bg-white" style="margin: 0px 24px 24px 24px;">
       <article>
@@ -27,10 +27,10 @@ lroem
   export default {
     data () {
       return {
-        created_at : '2019-05-23 21:30:00',
-        title: 'Laravel 쿼리 빌더 사용으로 인한 MSSQL 성능 이슈',
-        description: '컬럼 타입 강제 캐스팅으로 인해 인덱스를 타지 않았다.',
-        tags: ['web-backend', 'laravel', 'perfomance', 'issue'],
+        created_at : '2019-05-24 18:00:00',
+        title: 'Cordova-Based SPA에 핫 리로딩 적용하기',
+        description: 'config.xml - content 태그 값 변경으로 손쉽게 적용할 수 있어요.',
+        tags: ['web-frontend', 'cordova', 'vue', 'development-tip'],
         src: '/archive/development/laravel',
         image: '/laravel-logo.png'
       }

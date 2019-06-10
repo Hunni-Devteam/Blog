@@ -209,6 +209,8 @@
         <!-- <li><h4>워드프로세서</h4></li>
         <li><h4>리눅스마스터 2급</h4></li> -->
       </ul>
+      <br>
+      latest : e47ee2d871de6ff5702b884c091e771e649e887a
     </div>
   </section>
 </template>

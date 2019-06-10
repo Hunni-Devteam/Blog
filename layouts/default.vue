@@ -26,12 +26,10 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 @import 'normalize.css';
 
 * {
   letter-spacing: -0.12px;
-  font-family: 'Noto Sans KR', sans-serif;
 }
 
 ul, ol { list-style: none; margin: 0; padding: 0; }

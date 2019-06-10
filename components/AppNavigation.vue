@@ -1,7 +1,7 @@
 <template>
   <nav class="main-navigation" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
     <div style="color: #f9f9f9; text-align: center; margin-bottom: 56px; margin-top: 48px;">
-      <div @click="$router.push('/')" style="display: inline-block; margin-bottom: 8px; font-size: 30px; letter-spacing: -0.36px; cursor: pointer;">Hunni.Devteam</div><!--
+      <div @click="$router.push('/')" style="display: inline-block; margin-bottom: 8px; font-size: 30px; letter-spacing: 0.12px; cursor: pointer;">Hunni.Devteam</div><!--
    --><br>
       <span class="catchphrase" style="font-size: 17px; color: #d9d9d9;">Own the day, own your life</span>
     </div>

@@ -31,7 +31,7 @@ lroem
         title: 'Cordova-Based SPA에 핫 리로딩 적용하기',
         description: 'config.xml - content 태그 값 변경으로 손쉽게 적용할 수 있어요.',
         tags: ['web-frontend', 'cordova', 'vue', 'development-tip'],
-        src: '/archive/development/laravel',
+        src: '/archive/development/usage-of-cordova-remote-page-content',
         image: '/laravel-logo.png'
       }
     }

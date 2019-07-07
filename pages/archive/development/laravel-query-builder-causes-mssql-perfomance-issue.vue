@@ -31,7 +31,7 @@ lroem
         title: 'Laravel 쿼리 빌더 사용으로 인한 MSSQL 성능 이슈',
         description: '컬럼 타입 강제 캐스팅으로 인해 인덱스를 타지 않았다.',
         tags: ['web-backend', 'laravel', 'perfomance', 'issue'],
-        src: '/archive/development/laravel',
+        src: '/archive/development/laravel-query-builder-causes-mssql-perfomance-issue',
         image: '/laravel-logo.png'
       }
     }

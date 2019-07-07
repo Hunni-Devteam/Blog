@@ -31,7 +31,7 @@ lroem
         title: 'Cordova + Vue.js 연동하기',
         description: 'Vue CLI 3 너무 편해요!',
         tags: ['web-frontend', 'cordova', 'vue', 'development-tip'],
-        src: '/archive/development/laravel',
+        src: '/archive/development/use-cordova-with-vue-cli-3',
         image: '/laravel-logo.png'
       }
     }

@@ -66,9 +66,15 @@ div, header, nav, main, section, article, footer, aside {
   margin: 24px;
   .tui-editor-contents {
     color: #333;
+    h1 {
+      font-weight: normal;
+      line-height: 48px;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+    }
     p {
       color: #333;
-      font-size: 15px;
+      // font-size: 15px;
     }
   }
 }

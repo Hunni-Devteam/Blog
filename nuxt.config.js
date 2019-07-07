@@ -37,6 +37,7 @@ module.exports = {
   },
   plugins: [
     { src: '~plugins/fontAwesome', ssr: true },
+    { src: '~plugins/vueMoment', ssr: true },
     { src: '~plugins/tuiEditor', ssr: false },
     { src: '~plugins/components', ssr: true }
   ]

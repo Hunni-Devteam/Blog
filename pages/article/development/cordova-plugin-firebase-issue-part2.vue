@@ -1,22 +1,8 @@
 <template>
-  <div>
-    <!-- breadcrumb -->
-    <div style="height: 48px; line-height: 48px; background-color: #fff; margin: 0px 0px 24px 0px; padding: 0px 24px;">
-      <span v-for="(path, index) in $nuxt.$route.path.split('/')" :key="path">
-        <span v-if="index == 0" @click="$router.push('/')">home</span>
-        <span v-else>
-          <span> / </span>
-          <span>{{ path }}</span>
-        </span>
-      </span>
-    </div>
-    <div class="bg-white" style="margin: 0px 24px 24px 24px;">
-      <article>
-        <article-intro :image="image" :title="title" :description="description" :createdAt="created_at"></article-intro>
-        <div class="article-viewer">
-          {{ $moment(created_at).format('LLLL') }} 작성
-          <tui-viewer
-            value="
+  <article class="article-wrapper">
+    <article-intro :image="image" :title="title" :description="description" :createdAt="created_at"></article-intro>
+      <div class="article-viewer">
+        <tui-viewer value="
 # cordova-plugin-firebase 오류 기록 - Part 2
 
 오류를 추적하면서 알아낸 내용을 이어 적습니다.
@@ -77,12 +63,10 @@ config.xml에서 after_prepare 훅에 해당 스크립트 실행하게 하면 �
 
 앞으로도 Cordova 생태계 또는 모바일 환경에서 개발을 계속하게 된다면, 네이티브 개발에 쓸 언어와 프레임워크(Kotlin, Swift, Cocoa 등) 공부도 적극적으로 할 필요가 있을 것 같다.
 " />
-        </div>
-      </article>
-      <!-- Disqus thread -->
-      <disqus-thread :src="'https://hunni-devteam-1.disqus.com/embed.js'"></disqus-thread>
-    </div>
-  </div>
+      </div>
+    <!-- Disqus thread -->
+    <disqus-thread :src="'https://hunni-devteam-1.disqus.com/embed.js'"></disqus-thread>
+  </article>
 </template>
 
 <script type="text/javascript">
@@ -93,9 +77,12 @@ config.xml에서 after_prepare 훅에 해당 스크립트 실행하게 하면 �
         title: 'cordova-plugin-firebase 오류 기록 - Part 2',
         description: '오류 내용 분석과 조치 방법 정리',
         tags: ['cordova', 'android', 'issue'],
-        src: '/archive/development/cordova-plugin-firebase-issue-part2',
+        src: '/article/development/cordova-plugin-firebase-issue-part2',
         image: '/disqus-cover.png'
       }
+    },
+    mounted () {
+      this.$store.commit('setPageData', this.$data)
     }
   }
 </script>

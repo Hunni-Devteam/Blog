@@ -1,4 +1,8 @@
 module.exports = {
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
+  },
   /*
   ** Headers of the page
   */

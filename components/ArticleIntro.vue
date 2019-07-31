@@ -4,6 +4,7 @@
       :style="{ 'background-image': 'url('+image+')'}" 
       style="height: 320px; background-position: center; background-size: cover;">
     </div>
+    <b>{{ createdAt ? $moment(createdAt).format('YYYY-MM-DD') : '' }}</b>
   </div>
 </template>
 

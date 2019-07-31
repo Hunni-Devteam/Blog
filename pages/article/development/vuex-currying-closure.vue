@@ -1,22 +1,8 @@
 <template>
-  <div>
-    <!-- breadcrumb -->
-    <div style="height: 48px; line-height: 48px; background-color: #fff; margin: 0px 0px 24px 0px; padding: 0px 24px;">
-      <span v-for="(path, index) in $nuxt.$route.path.split('/')" :key="path">
-        <span v-if="index == 0" @click="$router.push('/')">home</span>
-        <span v-else>
-          <span> / </span>
-          <span>{{ path }}</span>
-        </span>
-      </span>
-    </div>
-    <div class="bg-white" style="margin: 0px 24px 24px 24px;">
-      <article>
-        <article-intro :image="image" :title="title" :description="description" :createdAt="created_at"></article-intro>
-        <div class="article-viewer">
-          {{ $moment(created_at).format('LLLL') }} 작성
-          <tui-viewer
-            value="
+  <article class="article-wrapper">
+    <article-intro :image="image" :title="title" :description="description" :createdAt="created_at"></article-intro>
+      <div class="article-viewer">
+        <tui-viewer value="
 # Vuex, 커링, 클로저.
 Vuex로 원하는 기능을 구현하면서, 알게 모르게 써오던 개념들을 정리하기 위해 적게 되었습니다.
 
@@ -89,12 +75,10 @@ getters.test() 의 첫 호출 시에는 state만 매개변수로 받아
 ## 참고 자료
 [https://vuex.vuejs.org/guide/getters.html#method-style-access](https://vuex.vuejs.org/guide/getters.html#method-style-access)
   " />
-        </div>
-      </article>
-      <!-- Disqus thread -->
-      <disqus-thread :src="'https://hunni-devteam-1.disqus.com/embed.js'"></disqus-thread>
-    </div>
-  </div>
+      </div>
+    <!-- Disqus thread -->
+    <disqus-thread :src="'https://hunni-devteam-1.disqus.com/embed.js'"></disqus-thread>
+  </article>
 </template>
 
 <script type="text/javascript">
@@ -105,9 +89,12 @@ getters.test() 의 첫 호출 시에는 state만 매개변수로 받아
         title: 'Vuex, 커링, 클로저.',
         description: '알게 모르게 써오던 개념 정리',
         tags: ['web-frontend', 'vue', 'development-tip', 'ES6', 'functional-programming'],
-        src: '/archive/development/vuex-currying-closure',
+        src: '/article/development/vuex-currying-closure',
         image: '/laravel-logo.png'
       }
+    },
+    mounted () {
+      this.$store.commit('setPageData', this.$data)
     }
   }
 </script>

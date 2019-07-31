@@ -1,22 +1,8 @@
 <template>
-  <div>
-    <!-- breadcrumb -->
-    <div style="height: 48px; line-height: 48px; background-color: #fff; margin: 0px 0px 24px 0px; padding: 0px 24px;">
-      <span v-for="(path, index) in $nuxt.$route.path.split('/')" :key="path">
-        <span v-if="index == 0" @click="$router.push('/')">home</span>
-        <span v-else>
-          <span> / </span>
-          <span>{{ path }}</span>
-        </span>
-      </span>
-    </div>
-    <div class="bg-white" style="margin: 0px 24px 24px 24px;">
-      <article>
-        <article-intro :image="image" :title="title" :description="description" :createdAt="created_at"></article-intro>
-        <div class="article-viewer">
-          {{ $moment(created_at).format('LLLL') }} 작성
-          <tui-viewer
-            value="
+  <article class="article-wrapper">
+    <article-intro :image="image" :title="title" :description="description" :createdAt="created_at"></article-intro>
+      <div class="article-viewer">
+        <tui-viewer value="
 # cordova-plugin-firebase 오류 기록 - Part 1
 
 **2편에서 오류 해결방법과 원인을 다룹니다.**
@@ -95,12 +81,10 @@ etc...
 - 비슷한 문제가 발생했을 때 바로 대처할 수 있도록 **디버그 로그 작성 및 공유를 습관화**합시다.
 - 당황해도 디버깅 속도가 느는 건 아니므로 **차분하게 차 한잔 마시고 조치내역을 기록**합시다.
 " />
-        </div>
-      </article>
-      <!-- Disqus thread -->
-      <disqus-thread :src="'https://hunni-devteam-1.disqus.com/embed.js'"></disqus-thread>
-    </div>
-  </div>
+      </div>
+    <!-- Disqus thread -->
+    <disqus-thread :src="'https://hunni-devteam-1.disqus.com/embed.js'"></disqus-thread>
+  </article>
 </template>
 
 <script type="text/javascript">
@@ -111,9 +95,12 @@ etc...
         title: 'cordova-plugin-firebase 오류 기록 - Part 1',
         description: '플랫폼 의존적인 플러그인 오류 찾기',
         tags: ['cordova', 'android', 'issue'],
-        src: '/archive/development/cordova-plugin-firebase-issue-part1',
+        src: '/article/development/cordova-plugin-firebase-issue-part1',
         image: '/disqus-cover.png'
       }
+    },
+    mounted () {
+      this.$store.commit('setPageData', this.$data)
     }
   }
 </script>

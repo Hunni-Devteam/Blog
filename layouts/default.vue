@@ -14,13 +14,32 @@
 import AppNavigation from '@/components/AppNavigation'
 
 export default {
+  head () {
+    return {
+      title: this.$store.getters.currentPage.title ? this.$store.getters.currentPage.title : 'Hunni.Devteam',
+      meta: [
+        {
+          hid: this.$store.getters.currentPage.created_at ? this.$store.getters.created_at : '',
+          name: this.$store.getters.currentPage.title ? this.$store.getters.currentPage.title : 'Hunni.Devteam',
+          content: this.$store.getters.currentPage.description ? this.$store.getters.currentPage.description : "Software Engineer, Hun Kang's Personal Blog"
+        }
+      ],
+      titleTemplate: this.$store.getters.currentPage.title ? '%s - Hunni.Devteam' : 'Hunni.Devteam',
+      htmlAttrs: {
+        lang: 'ko'
+      }
+    }
+  },
   components: { AppNavigation },
   data () {
     return {
       showSplash: false
     }
   },
-  mounted () {
+  watch: {
+    $route (currentRoute) {
+      currentRoute.path.indexOf('archive') == -1 ? this.$store.commit('setPageData', {}) : null
+    }
   }
 }
 </script>
@@ -59,9 +78,14 @@ div, header, nav, main, section, article, footer, aside {
   flex: 1; background-color: #e9e9e9;
 }
 
+.container {
+  margin: 24px;
+}
+
 .bg-white {
   background-color: #fff;
 }
+
 .article-viewer {
   margin: 24px;
   .tui-editor-contents {
@@ -74,8 +98,16 @@ div, header, nav, main, section, article, footer, aside {
     }
     p {
       color: #333;
-      // font-size: 15px;
+      font-size: 14px;
     }
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .36s ease;
+}
+.fade-enter, .fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

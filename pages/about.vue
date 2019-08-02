@@ -87,7 +87,7 @@
               <h4>주요 작업</h4>
               <strong>프로토타입 디자인</strong><br>
               <strong>대시보드, 상단 메뉴, 좌측 메뉴, 하단 메뉴</strong> 재작성<br>
-              호환성 보기(IE5 기준 렌더링) 기준으로 작성된 프론트엔드 코드 => <strong>Bootstrap 3 기반 재작성</strong><br>
+              호환성 보기(IE5 기준 렌더링)로 작성된 프론트엔드 코드 => <strong>Bootstrap 3으로 마이그레이션</strong><br>
               <strong>크로스 브라우징 / DOM API 호환성 테스트</strong> 및 오류 해결 자문
             </li>
           </ul>

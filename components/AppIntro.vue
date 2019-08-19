@@ -1,5 +1,5 @@
 <template>  
-  <section id="intro" style="display: flex; position: fixed; left: 0; top: 0; width: 100%; height: 100%;">
+  <section id="intro" :class="{ 'inactive': !this.isActive }">
     <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
       <div>
         <!-- 세로 타이포 -->
@@ -30,6 +30,7 @@
 export default {
   data () {
     return {
+      isActive: true,
       typo1: {
         text1: false,
         text2: false,
@@ -54,6 +55,10 @@ export default {
     setTimeout(() => this.typo2.text2 = true, 1050)
     setTimeout(() => this.typo2.text3 = true, 1200)
     setTimeout(() => this.typo2.text4 = true, 1350)
+    setTimeout(() => localStorage.setItem('Blog.AppIntroShown', 1), 1350)
+
+    setTimeout(() => this.isActive = false, 2600)
+
   }
 }
 </script>
@@ -61,9 +66,19 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
 #intro {
+  z-index: 10;
+  position: fixed;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  display: flex; 
   font-family: 'Nanum Myeongjo', serif;
   background-color: #333;
   color: #fff;
+  transition: 0.48s ease-in-out;
+  opacity: 1;
+  &.inactive {
+    opacity: 0;
+  }
   .vertical-typography {
     width: 64px; text-align: center;
     .text {

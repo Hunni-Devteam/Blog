@@ -1,16 +1,13 @@
 <template>
   <div id="layout">
-    <div class="splash" v-bind:class="{ 'inactive': !showSplash }" @dblclick="showSplash = false">
-      <div style="width: 100%; height: 50px;">
-        <div style="display: inline-block; color: #fff; font-size: 42px;">Hunni.Devteam</div>
-      </div>
-    </div>
+    <app-intro v-if="showIntro"></app-intro>
     <app-navigation></app-navigation>
     <nuxt/>
   </div>
 </template>
 
 <script type="text/javascript">
+import AppIntro from '@/components/AppIntro'
 import AppNavigation from '@/components/AppNavigation'
 
 export default {
@@ -30,11 +27,15 @@ export default {
       }
     }
   },
-  components: { AppNavigation },
+  components: { AppIntro, AppNavigation },
   data () {
     return {
-      showSplash: false
+      showIntro: true,
+      appMounted: false,
     }
+  },
+  mounted () {
+    if (this.showIntro) setTimeout(() => this.showIntro = false, 3400)
   },
   watch: {
     $route (currentRoute) {

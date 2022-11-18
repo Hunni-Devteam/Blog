@@ -20,7 +20,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.6",
     "@toast-ui/vue-editor": "^1.1.1",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "vue-moment": "^4.0.0"
   },
   "devDependencies": {
